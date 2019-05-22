@@ -1,10 +1,10 @@
-<!-- 
+<form #postForm="ngForm" (ngSubmit)="newPost(postForm)">
+    <h1>Add a new thought</h1>
 
-  <form #socialForm = "ngForm" (ngSubmit) = "addPost(postForm)">
-      <label for="">Title</label>
-      <input type="text" name="titleToAdd" ngModel>
-      <label for="">Thoughts</label>
-      <input type="textarea" name = "thoughtToAdd" ngModel>
-      <button>Add Post</button>
-    </form>
-    <post [posts]="post"></post> -->
+    <label for="">Title</label>
+    <input type="text" ngModel name="title"/>
+
+    <label for="">Thoughts</label>
+    <input type="text" ngModel name="thoughts"/>
+    <button>add</button>
+</form>

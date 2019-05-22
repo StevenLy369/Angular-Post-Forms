@@ -1,15 +1,17 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { Post } from "../post";
 
-
 @Component({
-  selector: 'social-posts',
-  templateUrl: './social-posts.component.html',
-  styleUrls: ['./social-posts.component.css']
+  selector: "social-posts",
+  templateUrl: "./social-posts.component.html",
+  styleUrls: ["./social-posts.component.css"]
 })
 export class SocialPostsComponent implements OnInit {
-  @Output() onAddPost = new EventEmitter<any>();
 
+
+
+
+  @Output() onNewPost = new EventEmitter<any>();
   socialPost: Post[] = [
     {
       title: "dog",
@@ -20,29 +22,20 @@ export class SocialPostsComponent implements OnInit {
       thoughts: "meow"
     },
     {
-      title:"cow",
-      thoughts:"moo"
-    },
-
-
+      title: "cow",
+      thoughts: "moo"
+    }
   ];
- 
 
-  constructor() { }
+  constructor() {}
 
-
-  removePost(index){
+  removePost(index) {
     console.log(index);
     this.socialPost.splice(index, 1);
   }
 
-  addPost(form){
-    
-    //  this.onAddPost.emit({title: form.value.titleToAdd, thought:form.value.thoughtToAdd});
-
-
+  newPost(post: any):void {
+    this.socialPost.push(post);
   }
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

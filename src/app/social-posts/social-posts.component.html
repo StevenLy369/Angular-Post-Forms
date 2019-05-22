@@ -1,17 +1,19 @@
 <h1>My Thoughts</h1>
 
+
 <div *ngFor="let post of socialPost; index as i">
-  <p>{{post.title}}</p>
-  <p>{{post.thoughts}}</p>
-  <span (click)="removePost(i)">X</span>
+ <p>{{post.title}}</p>
+ <p>{{post.thoughts}}</p>
+ <button (click)="removePost(i)">X</button>
 
 </div>
 
 
-
 <post
+(onNewPost)= "newPost($event)">
 
-></post>
+
+</post>
 <!-- 
 <post-form
  (onAddPost) = "addPost($event)" *ngIf="!shouldBeShown"
